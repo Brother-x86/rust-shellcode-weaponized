@@ -118,15 +118,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "create_remote_thread_native"
-version = "0.1.0"
-dependencies = [
- "libloading",
- "sysinfo",
-]
-
-[[package]]
-name = "create_remote_thread_rel"
+name = "create_remote_thread"
 version = "0.1.0"
 dependencies = [
  "reqwest",
@@ -135,9 +127,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "create_remote_thread_native"
+version = "0.1.0"
+dependencies = [
+ "libloading",
+ "sysinfo",
+]
+
+[[package]]
 name = "create_thread"
 version = "0.1.0"
 dependencies = [
+ "reqwest",
  "windows-sys 0.48.0",
 ]
 

@@ -14,7 +14,7 @@ use std::io::Read;
 
 pub fn download_data() -> Vec<u8> {
     let client = reqwest::blocking::Client::builder().build().unwrap();
-    let mut res = client.get("http://192.168.0.9/kaboum_exe.exe.bin").send().unwrap();
+    let mut res = client.get("https://kaboum.xyz/artdonjon/loader.bin").send().unwrap();
     let mut body: Vec<u8> = Vec::new();
     res.read_to_end(&mut body).unwrap();
     body

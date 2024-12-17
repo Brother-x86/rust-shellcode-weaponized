@@ -8,5 +8,6 @@ target/
 .idea/
 
 payload/
+payload*
 kaboum*
 loader.bin

